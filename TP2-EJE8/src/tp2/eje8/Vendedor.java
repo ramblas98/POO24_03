@@ -18,7 +18,7 @@ public class Vendedor {
         int i;
         this.legajo = -1;
         this.zonaDeVenta = "\0";
-        this.ventasMensuales = new double[12];
+        this.ventasMensuales = new double[13];
         for(i=0;i<12;i++) this.ventasMensuales[i+1]= 0;
     }
 

@@ -14,6 +14,9 @@ public class Persona {
     private int dni;
 
     public Persona() {
+        this.nombre = "\0";
+        this.apellido = "\0";
+        this.dni = -1;
     }
 
     public Persona(String nombre, String apellido, int dni) {

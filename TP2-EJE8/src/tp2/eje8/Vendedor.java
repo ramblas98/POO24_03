@@ -15,13 +15,20 @@ public class Vendedor {
     private double ventasMensuales[];
 
     public Vendedor() {
+        int i;
+        this.legajo = -1;
+        this.zonaDeVenta = "\0";
+        this.ventasMensuales = new double[12];
+        for(i=0;i<12;i++) this.ventasMensuales[i+1]= 0;
     }
 
-    public Vendedor(Persona datoPersona, int legajo, String zonaDeVenta, double[] ventasMensuales) {
+    public Vendedor(Persona datoPersona, int legajo, String zonaDeVenta) {
+        int i;
+        this.ventasMensuales = new double[12];
         this.datoPersona = datoPersona;
         this.legajo = legajo;
         this.zonaDeVenta = zonaDeVenta;
-        this.ventasMensuales = ventasMensuales;
+        for(i=0;i<12;i++) this.ventasMensuales[i]= 0;
     }
 
     public Persona getDatoPersona() {
@@ -36,8 +43,8 @@ public class Vendedor {
         return zonaDeVenta;
     }
 
-    public double[] getVentasMensuales() {
-        return ventasMensuales;
+    public double getVentasMensual(int mes) {
+        return this.ventasMensuales[mes];
     }
 
     public void setDatoPersona(Persona datoPersona) {
@@ -52,16 +59,17 @@ public class Vendedor {
         this.zonaDeVenta = zonaDeVenta;
     }
 
-    public void setVentasMensuales(double[] ventasMensuales) {
-        this.ventasMensuales = ventasMensuales;
+    public void setVentasMensuales(double ventaMes, int pos) {
+        this.ventasMensuales[pos] = ventaMes;
     }
     
     
+    //@SuppressWarnings("empty-statement")
     public double totalAnual(){
         int i;
         double total=0;
         for(i=0;i<12;i++){
-            total = total + this.ventasMensuales[i];
+            total = total + this.ventasMensuales[i+1];
         }
         return total;
     }
@@ -76,7 +84,7 @@ public class Vendedor {
 
     @Override
     public String toString() {
-        return "Vendedor{" + "datoPersona=" + datoPersona + ", legajo=" + legajo + ", zonaDeVenta=" + zonaDeVenta + ", ventasMensuales=" + ventasMensuales + '}';
+        return "Vendedor{" + "datoPersona=" + datoPersona + ", legajo=" + legajo + ", zonaDeVenta=" + zonaDeVenta + ", ventaTotal" + this.totalAnual() + '}';
     }
     
     

@@ -15,7 +15,7 @@ public class TP3_eje1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Futboilsta f1=new Futbolista();
+       // Futboilsta f1=new Futbolista();
     }
     
 }

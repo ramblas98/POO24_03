@@ -10,8 +10,8 @@ import java.util.List;
  * @author aaronz
  */
 public class Formacion {
-    private ArrayList<Locomotora> misL;
-    private ArrayList<Vagon> misV;
+    private List<Locomotora> misL;
+    private List<Vagon> misV;
     
     public Formacion(){
         this.misL = new ArrayList();

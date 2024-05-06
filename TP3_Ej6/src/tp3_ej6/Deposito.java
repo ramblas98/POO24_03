@@ -34,6 +34,15 @@ public class Deposito {
         return mconj;
     }
     public boolean condExp(){
-        
+        for(Formacion f : this.getFormacion()){
+            if(f.esCompleja()) return true;
+        }
+        return false;
+    }
+    public void agregarLocomotora(Locomotora l){
+        this.misL.add(l);
+    }
+    public void agregarFormacion(Formacion f){
+        this.misF.add(f);
     }
 }

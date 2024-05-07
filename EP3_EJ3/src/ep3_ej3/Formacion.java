@@ -18,11 +18,40 @@ public class Formacion {
     
     private Formacion(){
         this.misV = new ArrayList();
+        this.misL = new ArrayList();
+    }
+    
+    private Formacion(Vagon v,Locomotora L){
+        misV.add(v);
+        misL.add(L);
+        
     }
     
     
     
-    public double Empuje() {
+    
+    public int totalPasajeros() {
+        int t=0;
+        for (Vagon v: misV) {
+            t += v.cantidadPasajeros;
+        }
+        return t;
+    }
+    
+    public int cantidadVLivianos(){
+        int c=0;
+        for(Vagon v: misV){
+            if(v.pesoMaximo()<2500) {
+                c ++;
+            }
+            
+        }
+        return c;
+      
+    }
+    
+    
+    public double empuje() {
      double k=0;
      double total=0;
      double total1=0;
@@ -38,7 +67,7 @@ public class Formacion {
         k= total - total1;
         return k;
      }
-}
+    }
     
     public boolean puedeMoverse() {
         double p=0; 
@@ -55,7 +84,7 @@ public class Formacion {
         
     }
     
-    public boolean EsEficiente() {
+    public boolean esEficiente() {
         boolean band= true;
         for(Locomotora loc: misL){
             if(loc.getPesoMaximoArrastre()<5* loc.getPeso()) band=false;
@@ -76,5 +105,41 @@ public class Formacion {
         return men;
     }
     
+    public Vagon masPesado(){
+        double may=0;
+        Vagon Vmay = new Vagon();
+        
+        for (Vagon v: misV){
+            if(v.pesoMaximo()>may){
+                may=v.pesoMaximo();
+                Vmay=v;
+            }
+        }
+        return Vmay;
+    }
+    
+    public boolean esCompleja(){
+        boolean t=false;
+        
+        int cantLocomotoras = this.misL.size();
+        int cantVagones = this.misV.size();
+        if((cantLocomotoras + cantVagones)>20) t= true;
+        int pesoTotal =0;
+        for (Locomotora l: misL ){
+            pesoTotal += l.getPeso();
+        }
+        
+        for(Vagon v: misV){
+            pesoTotal += v.pesoMaximo();
+        }
+        if(pesoTotal>10000) t= true;
+        
+        return t;
+    }
+    
+    public void agregar(Locomotora L){
+        misL.add(L);
+        
+    }
 }
 //  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

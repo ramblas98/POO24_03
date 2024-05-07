@@ -13,7 +13,8 @@ package ep3_ej3;
 public class Vagon {
     protected double largo;
     protected double anchoUtil;
-    
+    protected int cantidadPasajeros; 
+            
     public Vagon(){
         
     }

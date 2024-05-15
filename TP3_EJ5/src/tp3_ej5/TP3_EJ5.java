@@ -8,6 +8,7 @@ public class TP3_EJ5 {
         
         System.out.println(p.precio());
         System.out.println(l.precio());
+        System.out.println(p.toString());
     }
     
 }

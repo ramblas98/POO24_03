@@ -20,5 +20,13 @@ public class Piso extends Inmueble {
         
         return pre;
     }
+
+    @Override
+    public String toString() {
+        super.toString();
+        return "Piso{" + "nDePiso=" + nDePiso + '}';
+    }
+
+    
     
 }

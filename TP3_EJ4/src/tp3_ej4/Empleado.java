@@ -73,9 +73,9 @@ public class Empleado {
     }
     
     
-    @Override
-    public String toString() {
-        return "Empleado{" + "nombre=" + nombre + ", ape=" + ape + ", ndeSegSoc=" + ndeSegSoc + " salario = $"+this.salario()+'}';
+    
+    public void mostrar() {
+        System.out.print("Empleado{" + "nombre=" + nombre + ", ape=" + ape + ", ndeSegSoc=" + ndeSegSoc + " salario = $"+this.salario()+'}');
     }
     
     

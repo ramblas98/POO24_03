@@ -10,6 +10,8 @@ public class TP3_EJ4 {
         
         System.out.println(a.salario());
         System.out.println(b.salario());
+        a.setColor("naranjada");
+        a.mostrar();
 
     }
     

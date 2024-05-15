@@ -62,6 +62,13 @@ public class Inmueble {
     public double precio(){
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return "Inmueble{" + "direccion=" + direccion + ", nDeM2=" + nDeM2 + ", anios=" + anios + ", estado=" + estado + ", precioBase=" + precioBase + '}';
+    }
+    
+    
     
     
     

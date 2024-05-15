@@ -19,21 +19,6 @@ public class TP3_EJ1 {
         pablo.jugarPartido();
         
         
-
-        // Mostrar la fecha ingresada
-        Calendar c1 = GregorianCalendar.getInstance();
-        Calendar c2 = GregorianCalendar.getInstance();
-        
-        
-        //System.out.println("Fecha actual: "+c1.getTime().toLocaleString());
-        
-        c1.set(2018, 1, 22);
-        c2.set(2018, 1, 22);
-        boolean sameDate = c1.get(Calendar.YEAR) == c2.get(Calendar.YEAR) &&
-                  c1.get(Calendar.MONTH) == c2.get(Calendar.MONTH) &&
-                  c1.get(Calendar.DAY_OF_MONTH) == c2.get(Calendar.DAY_OF_MONTH);
-        System.out.println(sameDate);
-        //System.out.println("Fecha vieja: "+c1.getTime().toLocaleString());
     }
     
 }
